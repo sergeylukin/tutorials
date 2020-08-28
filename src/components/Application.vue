@@ -77,15 +77,13 @@ export default {
         console.log(members)
         self.markers = members.map(mem => {
           if (JSON.stringify(self.userlocation) == JSON.stringify(mem.data)) {
-            return {
-              ...mem.data,
+            return  Object.assign({}, mem.data, {
               icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-            };
+            });
           } else {
-            return {
-              ...mem.data,
+            return  Object.assign({}, mem.data, {
               icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-            };
+            });
           }
         });
         self.onlineUsers = members;
